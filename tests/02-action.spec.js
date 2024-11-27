@@ -74,7 +74,12 @@ test('Basic action 04 - datepicker, color picker, range', async ({ page }) => {
 });
 
 test('Basic action 05 - file, hover', async ({ page }) => {
+    await page.goto("https://material.playwrightvn.com");
+    await page.click("//a[@href='01-xpath-register-page.html']");
+
     // File
+    await page.setInputFiles("//input[@id='profile']", "/Users/alex/workspace/tmp/00.txt");
 
     // Hover
+    await page.hover("//div[@class='tooltip']");
 })
