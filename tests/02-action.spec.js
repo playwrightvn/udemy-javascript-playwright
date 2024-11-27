@@ -1,5 +1,9 @@
 const { test } = require('@playwright/test');
 
+test('Basic action 00 - navigate', async ({ page }) => {
+    await page.goto("https://material.playwrightvn.com");
+});
+
 test('Basic action 01 - click', async ({ page }) => {
     await page.goto("https://material.playwrightvn.com");
 
@@ -8,17 +12,17 @@ test('Basic action 01 - click', async ({ page }) => {
 
     const clickArea = page.locator("//div[@id='clickArea']");
 
-    // Double click
+    // // Double click
     await clickArea.dblclick();
 
-    // Click nhiều lần
+    // // Click nhiều lần
     await clickArea.click({ clickCount: 10 });
 
     // Click chuột phải
     // await clickArea.click({ button: "right" });
 
     // Click kèm bấm phím shift
-    await clickArea.click({ modifiers: ["Shift"] });
+    await clickArea.click({ modifiers: ["Shift", "ControlOrMeta"] });
 });
 
 test('Basic action 02 - input', async ({ page }) => {
